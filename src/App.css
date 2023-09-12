@@ -7,7 +7,7 @@
 }
 .doctor-img:hover {
   transform: scale(1.05);
-  border: 2px solid red;
+  border: 2px solid rgb(0, 106, 255);
   cursor: pointer;
 }
 
