@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function AddModal({ show, handleClose }) {
   const [name, setName] = useState("");
-  const [date, serDate] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -16,12 +16,22 @@ function AddModal({ show, handleClose }) {
           <Form>
             <Form.Group className="mb-3" controlId="name">
               <Form.Label>Patient Name</Form.Label>
-              <Form.Control type="text" placeholder="Enter Name" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="date">
               <Form.Label>Day&Time</Form.Label>
-              <Form.Control type="datetime-local" placeholder="Date" />
+              <Form.Control
+                type="date"
+                placeholder="Date"
+                onChange={(e) => setDate(e.target.value)}
+                value={date}
+              />
             </Form.Group>
             <div className="text-end ">
               <Button variant="primary" type="submit" className="me-2">
