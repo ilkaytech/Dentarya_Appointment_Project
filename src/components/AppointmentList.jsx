@@ -10,7 +10,10 @@ const AppointmentList = ({ apps }) => {
         Appointment List
       </h3>
       {apps.map(({ id, patient, consulted, doctor, day }) => (
-        <div key={id} className="appointments">
+        <div
+          key={id}
+          className={consulted ? "appointments consulted" : "appointments"}
+        >
           <Row>
             <Col>
               <h4>{patient}</h4>
