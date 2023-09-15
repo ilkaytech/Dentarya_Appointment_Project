@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <main className="text-center mt-2">
       <h1 className="display-5 text-danger">DENTARYA</h1>
-      <Doctors />
+      <Doctors apps={appointments} setApps={appointments} />
       <AppointmentList apps={appointments} />
     </main>
   );

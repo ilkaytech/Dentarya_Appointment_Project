@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 
-function AddModal({ show, handleClose }) {
+function AddModal({ show, handleClose, apps, setApps }) {
   const [name, setName] = useState("");
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
   const handleSubmit = (e) => {

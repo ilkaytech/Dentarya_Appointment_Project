@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import AddModal from "./AddModal";
 import { useState } from "react";
 
-const Doctors = () => {
+const Doctors = ({ apps, setApps }) => {
   const [show, setShow] = useState(false);
   const handleImgClick = () => {
     setShow(true);
@@ -29,7 +29,12 @@ const Doctors = () => {
           </Col>
         ))}
       </Row>
-      <AddModal show={show} handleClose={() => setShow(false)} />
+      <AddModal
+        show={show}
+        handleClose={() => setShow(false)}
+        apps={apps}
+        setApps={setApps}
+      />
     </Container>
   );
 };

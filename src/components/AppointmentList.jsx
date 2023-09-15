@@ -14,13 +14,15 @@ const AppointmentList = ({ apps }) => {
           key={id}
           className={consulted ? "appointments consulted" : "appointments"}
         >
-          <Row>
-            <Col>
+          <Row className=" align-items-center ">
+            <Col xs={12} sm={12} md={6}>
               <h4>{patient}</h4>
               <h5>{doctor}</h5>
             </Col>
-            <Col>{day}</Col>
             <Col>
+              <h5>{day}</h5>
+            </Col>
+            <Col className="text-end">
               <RiCloseCircleLine className="text-primary fs-5" />
             </Col>
           </Row>
