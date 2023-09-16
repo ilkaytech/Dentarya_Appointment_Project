@@ -6,6 +6,7 @@ import { useState } from "react";
 function AddModal({ show, handleClose, apps, setApps, drName }) {
   const [name, setName] = useState("");
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setApps([
@@ -46,6 +47,7 @@ function AddModal({ show, handleClose, apps, setApps, drName }) {
                 placeholder="Date"
                 onChange={(e) => setDate(e.target.value)}
                 value={date}
+                required
               />
             </Form.Group>
             <div className="text-end ">

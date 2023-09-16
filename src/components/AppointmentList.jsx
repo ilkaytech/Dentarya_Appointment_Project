@@ -2,7 +2,20 @@ import Container from "react-bootstrap/Container";
 import { Row, Col } from "react-bootstrap";
 import { RiCloseCircleLine } from "react-icons/ri";
 
-const AppointmentList = ({ apps }) => {
+const AppointmentList = ({ apps, setApps }) => {
+  console.log(apps);
+
+  const handleDelete = (id) => {
+    setApps(apps.filter((item) => item.id !== id));
+  };
+
+  const handleDoubleClick = (id) => {
+    setApps(
+      apps.map((item) =>
+        item.id == id ? { ...item, consulted: !item.consulted } : item
+      )
+    );
+  };
   console.log(apps);
   return (
     <Container className="p-2">
@@ -23,7 +36,11 @@ const AppointmentList = ({ apps }) => {
               <h5>{day}</h5>
             </Col>
             <Col className="text-end">
-              <RiCloseCircleLine className="text-primary fs-5" />
+              <RiCloseCircleLine
+                className="text-primary fs-5"
+                type="button"
+                onClick={() => handleDelete(id)}
+              />
             </Col>
           </Row>
         </div>
