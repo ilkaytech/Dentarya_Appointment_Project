@@ -22,10 +22,13 @@ const AppointmentList = ({ apps, setApps }) => {
       <h3 className="display-6 mb-2" style={{ color: "rgb(166, 18, 189)" }}>
         Appointment List
       </h3>
+      {apps.length < 1 && <img src="./img/appointment.jpg" width="70%" />}
+
       {apps.map(({ id, patient, consulted, doctor, day }) => (
         <div
           key={id}
           className={consulted ? "appointments consulted" : "appointments"}
+          onDoubleClick={() => handleDoubleClick(id)}
         >
           <Row className=" align-items-center ">
             <Col xs={12} sm={12} md={6}>
