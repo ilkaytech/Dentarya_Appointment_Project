@@ -37,6 +37,7 @@ function AddModal({ show, handleClose, apps, setApps, drName }) {
                 placeholder="Enter Name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+                required
               />
             </Form.Group>
 
